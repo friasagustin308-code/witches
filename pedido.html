@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedidos y presupuestos — BRUJAS</title>
+    <meta
+      name="description"
+      content="Armá tu pedido o pedí un presupuesto a BRUJAS. Completá el formulario y seguís por WhatsApp."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <button
+          class="nav-trigger"
+          id="navTrigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navDropdown"
+          aria-label="Abrir menú"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="logo"
+          >BRUJAS<small>Tienda de ropa</small></a
+        >
+        <span class="header-spacer" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="nav-dropdown" id="navDropdown" aria-label="Menú principal">
+      <ul>
+        <li>
+          <a href="index.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Inicio</a
+          >
+        </li>
+      </ul>
+      <p class="nav-section-label">Categorías</p>
+      <ul>
+        <li>
+          <a href="fitness.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Fitness</a
+          >
+        </li>
+        <li>
+          <a href="mujer.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Mujer</a
+          >
+        </li>
+        <li>
+          <a href="hombre.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Hombre</a
+          >
+        </li>
+      </ul>
+      <p class="nav-section-label">Tienda &amp; info</p>
+      <ul>
+        <li>
+          <a href="pedido.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Pedidos &amp;
+            presupuestos</a
+          >
+        </li>
+        <li>
+          <a href="envios.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Envíos y pagos</a
+          >
+        </li>
+        <li>
+          <a href="nosotros.html"
+            ><span class="moon" aria-hidden="true">🌙</span>Nosotros</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="page-head">
+        <div class="container">
+          <p class="eyebrow">Armá tu pedido</p>
+          <h1>Pedidos &amp; presupuestos</h1>
+          <p>
+            Contanos qué buscás y te confirmamos disponibilidad, talles y precio
+            directo por WhatsApp. También podés escribirnos directamente si ya
+            sabés qué querés.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <form
+            class="form-card"
+            id="pedidoForm"
+            novalidate
+            action="https://formspree.io/f/xrevnapz"
+            method="POST"
+          >
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre <span class="req">*</span></label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="apellido">Apellido</label>
+                <input
+                  type="text"
+                  id="apellido"
+                  name="apellido"
+                  autocomplete="family-name"
+                />
+              </div>
+              <div class="field">
+                <label for="telefono"
+                  >Teléfono / WhatsApp <span class="req">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="Ej: 381 555 0000"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="field">
+                <label for="sector">Sector de interés</label>
+                <select id="sector" name="sector">
+                  <option value="">Elegir...</option>
+                  <option value="Fitness">Fitness</option>
+                  <option value="Mujer">Mujer</option>
+                  <option value="Hombre">Hombre</option>
+                  <option value="Varios">Varios / no estoy seguro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="talle">Talle aproximado</label>
+                <select id="talle" name="talle">
+                  <option value="">Elegir...</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                  <option>Único / no aplica</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="producto">Producto/s de interés</label>
+                <input
+                  type="text"
+                  id="producto"
+                  name="producto"
+                  placeholder="Ej: Legging Luna, Remera Eclipse..."
+                />
+              </div>
+              <div class="field">
+                <label for="cantidad">Cantidad</label>
+                <input
+                  type="number"
+                  id="cantidad"
+                  name="cantidad"
+                  min="1"
+                  value="1"
+                />
+              </div>
+              <div class="field full">
+                <label for="comentarios">Comentarios</label>
+                <textarea
+                  id="comentarios"
+                  name="comentarios"
+                  placeholder="Colores, talles, dirección de envío o cualquier detalle extra..."
+                ></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Enviar pedido por WhatsApp
+            </button>
+            <p class="form-status" id="pedidoStatus"></p>
+            <p class="form-note">
+              Al enviar, se abre WhatsApp con tu pedido ya redactado para que lo
+              confirmes con nosotras. No compartimos tus datos con terceros.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section-tight">
+        <div class="container">
+          <div class="lunar-divider on-light">
+            <span class="line"></span>
+            <span class="phases" aria-hidden="true"
+              >🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘</span
+            >
+            <span class="line"></span>
+          </div>
+          <p class="text-center">
+            ¿Preferís escribirnos directo?
+            <a
+              href="#"
+              data-wa-message="Hola Brujas! 🌙 Quiero hacer una consulta."
+              target="_blank"
+              rel="noopener"
+              style="color: var(--bordo); font-weight: 600"
+              >Abrí el chat de WhatsApp</a
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <p class="logo">BRUJAS</p>
+            <p>
+              Ropa fitness e informal para quienes hacen su propio ritual cada
+              día. Pedís por WhatsApp y listo.
+            </p>
+          </div>
+          <div>
+            <h4>Categorías</h4>
+            <ul>
+              <li><a href="fitness.html">Fitness</a></li>
+              <li><a href="mujer.html">Mujer</a></li>
+              <li><a href="hombre.html">Hombre</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Tienda</h4>
+            <ul>
+              <li><a href="pedido.html">Pedidos &amp; presupuestos</a></li>
+              <li><a href="envios.html">Envíos y pagos</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  data-wa-message="Hola Brujas! 🌙 Quiero hacer una consulta."
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a href="mailto:hola@brujas.com.ar">hola@brujas.com.ar</a>
+              </li>
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener"
+                  >Instagram</a
+                >
+              </li>
+              <li>Tucumán, Argentina</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span class="current-year"></span> BRUJAS. Todos los derechos
+            reservados.</span
+          >
+          <span
+            >Sitio de ejemplo — reemplazá textos, precios e imágenes por los
+            reales.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="waFloat"
+      class="whatsapp-float"
+      data-wa-message="Hola Brujas! 🌙 Quiero hacer una consulta sobre un pedido."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chatear por WhatsApp"
+    >
+      <span class="wa-tip">Pedí por WhatsApp</span>
+      <span class="wa-btn"
+        ><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M17.6 6.32A8.86 8.86 0 0 0 12.03 3.5c-4.87 0-8.83 3.94-8.83 8.8 0 1.56.42 3.07 1.2 4.4L3.5 21l4.45-.83a8.9 8.9 0 0 0 4.07 1.01h.01c4.87 0 8.83-3.94 8.83-8.8a8.7 8.7 0 0 0-2.26-6.05Zm-5.57 13.5h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.52.53-2.72-.18-.28a7.3 7.3 0 0 1-1.13-3.9c0-4.05 3.32-7.35 7.4-7.35a7.36 7.36 0 0 1 7.4 7.35c0 4.06-3.32 7.36-7.4 7.36Zm4.06-5.5c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.14.22-.57.71-.7.86-.13.14-.26.16-.48.05-1.3-.64-2.15-1.15-3.01-2.6-.23-.4.23-.37.65-1.24.07-.15.04-.27-.03-.39-.07-.11-.5-1.2-.69-1.65-.18-.43-.37-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.4.06-.6.29-.21.22-.8.79-.8 1.92 0 1.13.81 2.22.92 2.38.11.15 1.55 2.42 3.83 3.34 1.96.79 2.36.66 2.78.62.43-.04 1.39-.57 1.59-1.12.19-.55.19-1.02.13-1.12-.05-.1-.2-.16-.43-.27Z"
+          /></svg
+      ></span>
+    </a>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
